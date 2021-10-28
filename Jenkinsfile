@@ -8,13 +8,12 @@ pipeline{
 		 }
    }
    
-    stages{
-      stage('Docker build Stage'){
+    stage('Docker build Stage'){
 	     steps{
 		    sh 'docker build -t testapp .'
 			echo 'Docker build stage successfully excuted'
 		 }
-   }
+    }
    
     stage('Approval Step'){
             steps{
@@ -36,6 +35,7 @@ pipeline{
 		    
 		    sh 'docker push nanditasahu/testapp'
 		 }
+   }
    }
    
    post{
